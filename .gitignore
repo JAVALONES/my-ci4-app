@@ -1,0 +1,13 @@
+# CodeIgniter 4
+writable/persistent/
+writable/cache/
+writable/logs/
+writable/session/
+writable/uploads/
+vendor/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp

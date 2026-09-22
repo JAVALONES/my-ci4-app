@@ -1,60 +1,82 @@
-# CodeIgniter 4 Framework
+# IT0049 - TFA1: From Zero to Four Pages (CodeIgniter POS Foundations)
 
-## What is CodeIgniter?
+A four-page CodeIgniter 4 Point-of-Sale (POS) application built as a Technical Formative Assessment (TFA1) for **IT0049 - Web System Technologies**.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Required Pages
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+| Route | Controller | Method | Description |
+|-------|-----------|--------|-------------|
+| `/` | Pages | `index()` | Landing page |
+| `/about` | Pages | `about()` | About page |
+| `/customers` | Customers | `index()` | Customer Accounts — lists 5 records from a static PHP array |
+| `/users` | Users | `index()` | User Accounts — lists 5 records from a static PHP array |
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Project Structure
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+```
+my-ci4-app/
+├── app/
+│   ├── Config/
+│   │   ├── App.php       (indexPage = '', baseURL configured)
+│   │   └── Routes.php    (4 routes registered)
+│   ├── Controllers/
+│   │   ├── Pages.php     (Home + About)
+│   │   ├── Customers.php (Customer list — static PHP array)
+│   │   └── Users.php     (User list — static PHP array)
+│   ├── Models/
+│   │   └── ProductModel.php
+│   ├── Views/
+│   │   ├── pages/
+│   │   │   ├── home.php
+│   │   │   └── about.php
+│   │   ├── customers/
+│   │   │   └── index.php
+│   │   └── users/
+│   │       └── index.php
+│   └── ...
+├── public/
+├── system/
+├── .env           (configured with development mode + base URL)
+├── .htaccess      (for clean URLs)
+├── composer.json
+├── spark
+└── README.md
+```
 
-## Important Change with index.php
+## Setup Instructions
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+### Prerequisites
+- PHP 8.2 or newer
+- Composer 2.0.14 or newer
+- Apache with `mod_rewrite` enabled and `AllowOverride All`
+- MySQL (optional — only for the Products module)
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### Installation
 
-**Please** read the user guide for a better explanation of how CI4 works!
+1. Clone this repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git my-ci4-app
+cd my-ci4-app
+```
 
-## Repository Management
+2. Install Composer dependencies (if `vendor/` is not included):
+```bash
+composer install
+```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+3. Configure `.env` (already set up — verify these lines):
+```
+CI_ENVIRONMENT = development
+app.baseURL = 'http://localhost/my-ci4-app/'
+```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+4. Start Apache and MySQL via XAMPP Control Panel.
 
-## Contributing
+5. Visit: `http://localhost/my-ci4-app/`
 
-We welcome contributions from the community.
+## Technical Notes
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- This activity uses **static PHP arrays** as a temporary data source (no database for Customers and Users pages).
+- The `esc()` helper is used for safe HTML output.
+- Navigation links are present on all four pages.
+- The `.env` file is included for lab submission purposes.

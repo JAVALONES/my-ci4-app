@@ -37,7 +37,7 @@
             <?php foreach ($customers as $customer): ?>
                 <tr>
                     <td><?= esc($customer['id']) ?></td>
-                    <td><?= esc($customer['name']) ?></td>
+                    <td><?= esc($customer['full_name']) ?></td>
                     <td><?= esc($customer['email']) ?></td>
                     <td><?= esc($customer['phone']) ?></td>
                 </tr>

@@ -1,6 +1,6 @@
-# IT0049 — TFA2: From Arrays to a Real Database (CodeIgniter POS)
+# CodeIgniter POS Project
 
-A four-page CodeIgniter 4 POS that replaces static arrays with a SQLite database via Query Builder Models (TFA2).
+In compliance with the subject "Web System Technologies"
 
 ## Required Pages
 

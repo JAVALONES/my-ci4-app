@@ -1,6 +1,6 @@
-# IT0049 - TFA1: From Zero to Four Pages (CodeIgniter POS Foundations)
+# IT0049 — TFA2: From Arrays to a Real Database (CodeIgniter POS)
 
-A four-page CodeIgniter 4 Point-of-Sale (POS) application built as a Technical Formative Assessment (TFA1) for **IT0049 - Web System Technologies**.
+A four-page CodeIgniter 4 POS that replaces static arrays with a SQLite database via Query Builder Models (TFA2).
 
 ## Required Pages
 
@@ -8,8 +8,8 @@ A four-page CodeIgniter 4 Point-of-Sale (POS) application built as a Technical F
 |-------|-----------|--------|-------------|
 | `/` | Pages | `index()` | Landing page |
 | `/about` | Pages | `about()` | About page |
-| `/customers` | Customers | `index()` | Customer Accounts — lists 5 records from a static PHP array |
-| `/users` | Users | `index()` | User Accounts — lists 5 records from a static PHP array |
+|| `/customers` | Customers | `index()` | Customer Accounts — 5 records from SQLite (`customers` table via `CustomerModel`) |
+|| `/users` | Users | `index()` | User Accounts — 5 records from SQLite (`users` table via `UserModel`) |
 
 ## Project Structure
 

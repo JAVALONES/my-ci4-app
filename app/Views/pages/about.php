@@ -25,7 +25,7 @@
 
     <p><strong>Application:</strong> Tasks for Today Management System</p>
     <p><strong>Framework:</strong> CodeIgniter 4</p>
-    <p><strong>Developer:</strong> Valon</p>
+    <p><strong>Developer:</strong> Joseph Victor A. Valones</p>
     <p><strong>Course:</strong> IT0049 - Web System Technologies</p>
     <p><strong>Institution:</strong> College of Computer Studies and Multimedia Arts, ICT-AA</p>
 </body>

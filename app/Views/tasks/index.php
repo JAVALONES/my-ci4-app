@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Accounts</title>
+    <title>Task List</title>
     <style>
         body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; }
         nav { margin: 20px 0; padding: 10px; background: #f4f4f4; }
@@ -12,10 +12,13 @@
         table { width: 100%; border-collapse: collapse; margin-top: 15px; }
         th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
         th { background: #006633; color: white; }
+        .status-pending { color: orange; font-weight: bold; }
+        .status-in-progress { color: blue; font-weight: bold; }
+        .status-completed { color: green; font-weight: bold; }
     </style>
 </head>
 <body>
-    <h1>User Accounts</h1>
+    <h1>Task List</h1>
 
     <nav>
         <a href="<?= base_url('/') ?>">Home</a>
@@ -28,20 +31,18 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Username</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Created At</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Date</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($users as $user): ?>
+            <?php foreach ($tasks as $task): ?>
                 <tr>
-                    <td><?= esc($user['id']) ?></td>
-                    <td><?= esc($user['username']) ?></td>
-                    <td><?= esc($user['full_name']) ?></td>
-                    <td><?= esc($user['email'] ?? '') ?></td>
-                    <td><?= esc($user['created_at']) ?></td>
+                    <td><?= esc($task['id']) ?></td>
+                    <td><?= esc($task['title']) ?></td>
+                    <td class="status-<?= esc($task['status']) ?>"><?= esc(ucfirst(str_replace('-', ' ', $task['status']))) ?></td>
+                    <td><?= esc($task['task_date']) ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

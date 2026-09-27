@@ -7,20 +7,26 @@
     <style>
         body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; }
         nav { margin: 20px 0; padding: 10px; background: #f4f4f4; }
-        nav a { margin-right: 15px; text-decoration: none; color: #0066cc; }
+        nav a { margin-right: 15px; text-decoration: none; color: #006633; }
         nav a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <h1><?= esc($heading) ?></h1>
-
-    <p><?= esc($message) ?></p>
+    <h1>About Us</h1>
 
     <nav>
         <a href="<?= base_url('/') ?>">Home</a>
+        <a href="<?= base_url('tasks') ?>">Task List</a>
+        <a href="<?= base_url('profile') ?>">Profile</a>
         <a href="<?= base_url('about') ?>">About</a>
-        <a href="<?= base_url('customers') ?>">Customer Accounts</a>
-        <a href="<?= base_url('users') ?>">User Accounts</a>
     </nav>
+
+    <p><?= esc($message) ?></p>
+
+    <p><strong>Application:</strong> Tasks for Today Management System</p>
+    <p><strong>Framework:</strong> CodeIgniter 4</p>
+    <p><strong>Developer:</strong> Valon</p>
+    <p><strong>Course:</strong> IT0049 - Web System Technologies</p>
+    <p><strong>Institution:</strong> College of Computer Studies and Multimedia Arts, ICT-AA</p>
 </body>
 </html>

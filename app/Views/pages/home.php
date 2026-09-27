@@ -9,18 +9,48 @@
         nav { margin: 20px 0; padding: 10px; background: #f4f4f4; }
         nav a { margin-right: 15px; text-decoration: none; color: #0066cc; }
         nav a:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background: #006633; color: white; }
+        .status-pending { color: orange; font-weight: bold; }
+        .status-in-progress { color: blue; font-weight: bold; }
+        .status-completed { color: green; font-weight: bold; }
+        .empty-msg { color: #999; font-style: italic; margin: 15px 0; }
     </style>
 </head>
 <body>
     <h1><?= esc($heading) ?></h1>
 
-    <p>Welcome to our Point-of-Sale (POS) system built with CodeIgniter 4.</p>
-
     <nav>
         <a href="<?= base_url('/') ?>">Home</a>
+        <a href="<?= base_url('tasks') ?>">Task List</a>
+        <a href="<?= base_url('profile') ?>">Profile</a>
         <a href="<?= base_url('about') ?>">About</a>
-        <a href="<?= base_url('customers') ?>">Customer Accounts</a>
-        <a href="<?= base_url('users') ?>">User Accounts</a>
     </nav>
+
+    <?php if (!empty($tasks)): ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($tasks as $task): ?>
+                    <tr>
+                        <td><?= esc($task['id']) ?></td>
+                        <td><?= esc($task['title']) ?></td>
+                        <td class="status-<?= esc($task['status']) ?>"><?= esc(ucfirst(str_replace('-', ' ', $task['status']))) ?></td>
+                        <td><?= esc($task['task_date']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p class="empty-msg">No tasks for today.</p>
+    <?php endif; ?>
 </body>
 </html>

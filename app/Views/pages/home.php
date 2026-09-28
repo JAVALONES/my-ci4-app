@@ -26,7 +26,14 @@
         <a href="<?= base_url('tasks') ?>">Task List</a>
         <a href="<?= base_url('profile') ?>">Profile</a>
         <a href="<?= base_url('about') ?>">About</a>
+        <span style="margin-left:10px; font-weight:bold; color:#cc6600;">| TFA ↔ TSA Toggle</span>
+        <a href="<?= base_url('customers') ?>" style="margin-left:10px; font-weight:bold; color:#009900;">Customers (TFA)</a>
+        <a href="<?= base_url('tasks') ?>" style="font-weight:bold; color:#0066cc;">Tasks (TSA)</a>
     </nav>
+
+    <div style="background:#fff8e1;padding:12px;border-left:4px solid #cc6600;margin:15px 0;border-radius:4px;">
+        <strong>Switch Mode:</strong> Click <strong style="color:#009900;">Customers (TFA)</strong> to view customer accounts (TFA2 database), or <strong style="color:#0066cc;">Tasks (TSA)</strong> for today's task list (TSA1). This site runs both activities.
+    </div>
 
     <?php if (!empty($tasks)): ?>
         <table>

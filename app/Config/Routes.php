@@ -8,9 +8,30 @@ $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(true);
 $routes->set404Override();
 
+// Public (no auth needed)
 $routes->get('/', 'Pages::index');
 $routes->get('tasks', 'Tasks::index');
 $routes->get('profile', 'Profile::index');
 $routes->get('about', 'Pages::about');
-$routes->get('customers', 'Customers::index');
-$routes->get('users', 'Users::index');
+
+// TFA3 Forms + TFA2 Customer/User routes (protected by auth)
+$routes->group('customers', ['filter'=>'auth'], function($routes) {
+    $routes->get('/', 'Customers::index');
+    $routes->get('new', 'Customers::new');
+    $routes->post('/', 'Customers::create');
+    $routes->get('edit/(:num)', 'Customers::edit/$1');
+    $routes->post('update/(:num)', 'Customers::update/$1');
+});
+
+$routes->group('users', ['filter'=>'auth'], function($routes) {
+    $routes->get('/', 'Users::index');
+    $routes->get('new', 'Users::new');
+    $routes->post('/', 'Users::create');
+    $routes->get('edit/(:num)', 'Users::edit/$1');
+    $routes->post('update/(:num)', 'Users::update/$1');
+});
+
+// TFA4 Auth
+$routes->get('login', 'Auth::login');
+$routes->post('auth/verify', 'Auth::verify');
+$routes->get('logout', 'Auth::logout');

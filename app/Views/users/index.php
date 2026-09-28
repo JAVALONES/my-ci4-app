@@ -29,6 +29,7 @@
             <tr>
                 <th>ID</th>
                 <th>Username</th>
+                <th>Avatar</th>
                 <th>Full Name</th>
                 <th>Created At</th>
             </tr>
@@ -38,8 +39,10 @@
                 <tr>
                     <td><?= esc($user['id']) ?></td>
                     <td><?= esc($user['username']) ?></td>
+                    <td><img src="<?= $user['avatar'] ? base_url('uploads/'.$user['avatar']) : base_url('uploads/placeholder.png') ?>" width="40" height="40" style="object-fit:cover;border-radius:4px;"></td>
                     <td><?= esc($user['full_name']) ?></td>
                     <td><?= esc($user['created_at']) ?></td>
+                    <td><a href="<?= base_url('users/edit/'.$user['id']) ?>">Edit</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

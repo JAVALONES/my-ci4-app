@@ -19,9 +19,10 @@
 
     <nav>
         <a href="<?= base_url('/') ?>">Home</a>
-        <a href="<?= base_url('about') ?>">About</a>
+        <a href="<?= base_url('tasks') ?>">Tasks</a>
         <a href="<?= base_url('customers') ?>">Customers</a>
         <a href="<?= base_url('users') ?>">Users</a>
+        <a href="<?= base_url('customers/new') ?>">Add Customer</a>
     </nav>
 
     <table>
@@ -40,6 +41,7 @@
                     <td><?= esc($customer['full_name']) ?></td>
                     <td><?= esc($customer['email']) ?></td>
                     <td><?= esc($customer['phone']) ?></td>
+                    <td><a href="<?= base_url('customers/edit/'.$customer['id']) ?>">Edit</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -35,3 +35,9 @@ $routes->group('users', ['filter'=>'auth'], function($routes) {
 $routes->get('login', 'Auth::login');
 $routes->post('auth/verify', 'Auth::verify');
 $routes->get('logout', 'Auth::logout');
+
+// TSA2: Task management (public view, protected actions)
+$routes->get('tasks/new', 'Tasks::new', ['filter' => 'auth']);
+$routes->post('tasks', 'Tasks::create', ['filter' => 'auth']);
+$routes->get('tasks/edit/(:num)', 'Tasks::edit/$1', ['filter' => 'auth']);
+$routes->get('tasks/delete/(:num)', 'Tasks::delete/$1', ['filter' => 'auth']);

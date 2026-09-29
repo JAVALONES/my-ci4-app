@@ -25,6 +25,12 @@
         <a href="<?= base_url('tasks') ?>">Task List</a>
         <a href="<?= base_url('profile') ?>">Profile</a>
         <a href="<?= base_url('about') ?>">About</a>
+        <?php if (session()->get('isLoggedIn')): ?>
+            | <a href="<?= base_url('tasks/new') ?>">New Task</a>
+            <a href="<?= base_url('logout') ?>">Logout (<?= esc(session()->get('username')) ?>)</a>
+        <?php else: ?>
+            | <a href="<?= base_url('login') ?>">Login</a>
+        <?php endif; ?>
     </nav>
 
     <table>
@@ -34,6 +40,7 @@
                 <th>Task</th>
                 <th>Status</th>
                 <th>Date</th>
+                <?php if (session()->get('isLoggedIn')): ?><th>Actions</th><?php endif; ?>
             </tr>
         </thead>
         <tbody>
@@ -43,6 +50,12 @@
                     <td><?= esc($task['title']) ?></td>
                     <td class="status-<?= esc($task['status']) ?>"><?= esc(ucfirst(str_replace('-', ' ', $task['status']))) ?></td>
                     <td><?= esc($task['task_date']) ?></td>
+                    <?php if (session()->get('isLoggedIn')): ?>
+                        <td>
+                            <a href="<?= base_url('tasks/edit/'.$task['id']) ?>">Edit</a> |
+                            <a href="<?= base_url('tasks/delete/'.$task['id']) ?>" onclick="return confirm('Archive this task?')"><font color="red">Delete</font></a>
+                        </td>
+                    <?php endif; ?>
                 </tr>
             <?php endforeach; ?>
         </tbody>

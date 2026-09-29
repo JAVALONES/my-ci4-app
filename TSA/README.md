@@ -21,9 +21,13 @@ Files connected to **TSA1** (Tasks for Today — task management dashboard with 
 ## Date Distribution
 | Date | Tasks | Description |
 |---|---|---|
-| Sep 26 | 5 | Historical (completed) — not shown on homepage |
-| Sep 27 (today) | 5 | Shown on homepage — Tasks for Today |
-| Sep 28 (tomorrow) | 2 | Deadline — not shown on homepage |
+| Sep 26 | 3 | Historical (completed) — not shown on homepage |
+| Sep 27 (today) | 3 | Shown on homepage — Tasks for Today |
+| Sep 28 | 2 | Upcoming tasks (in progress) |
+| Sep 29 | 1 | Pending |
+| Sep 30 | 1 | Pending |
+| Oct 1 | 1 | In progress |
+| Oct 3 | 1 | Deadline — final task
 
 ## File Inventory
 ```

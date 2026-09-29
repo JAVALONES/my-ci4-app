@@ -21,15 +21,15 @@ CREATE TABLE tasks (
 INSERT INTO "tasks" VALUES(1,'Generate sales report for Q3','completed','2026-09-26','2026-09-26 09:00:00',0);
 INSERT INTO "tasks" VALUES(2,'Update inventory database','completed','2026-09-26','2026-09-26 10:30:00',0);
 INSERT INTO "tasks" VALUES(3,'Prepare weekly meeting agenda','completed','2026-09-26','2026-09-26 14:00:00',0);
-INSERT INTO "tasks" VALUES(4,'Review customer feedback','completed','2026-09-26','2026-09-26 16:45:00',0);
-INSERT INTO "tasks" VALUES(5,'Restock office supplies','completed','2026-09-26','2026-09-26 15:30:00',0);
+INSERT INTO "tasks" VALUES(4,'Review customer feedback','completed','2026-09-27','2026-09-26 16:45:00',0);
+INSERT INTO "tasks" VALUES(5,'Restock office supplies','completed','2026-09-27','2026-09-26 15:30:00',0);
 INSERT INTO "tasks" VALUES(6,'Send payroll to accounting','in progress','2026-09-27','2026-09-27 08:30:00',0);
-INSERT INTO "tasks" VALUES(7,'Process morning orders','pending','2026-09-27','2026-09-27 09:00:00',0);
-INSERT INTO "tasks" VALUES(8,'Update employee schedules','in progress','2026-09-27','2026-09-27 11:15:00',0);
-INSERT INTO "tasks" VALUES(9,'Clean and organize storage room','pending','2026-09-27','2026-09-27 13:45:00',0);
-INSERT INTO "tasks" VALUES(10,'Submit monthly expense report','pending','2026-09-27','2026-09-27 15:00:00',0);
-INSERT INTO "tasks" VALUES(11,'Review Q4 project portfolio','in progress','2026-09-28','2026-09-27 17:00:00',0);
-INSERT INTO "tasks" VALUES(12,'Verify system access permissions','pending','2026-09-28','2026-09-27 18:30:00',0);
+INSERT INTO "tasks" VALUES(7,'Process morning orders','pending','2026-09-28','2026-09-27 09:00:00',0);
+INSERT INTO "tasks" VALUES(8,'Update employee schedules','in progress','2026-09-28','2026-09-27 11:15:00',0);
+INSERT INTO "tasks" VALUES(9,'Clean and organize storage room','pending','2026-09-29','2026-09-27 13:45:00',0);
+INSERT INTO "tasks" VALUES(10,'Submit monthly expense report','pending','2026-09-30','2026-09-27 15:00:00',0);
+INSERT INTO "tasks" VALUES(11,'Review Q4 project portfolio','in progress','2026-10-01','2026-09-27 17:00:00',0);
+INSERT INTO "tasks" VALUES(12,'Verify system access permissions','pending','2026-10-03','2026-09-27 18:30:00',0);
 CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT NOT NULL UNIQUE,

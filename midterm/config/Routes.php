@@ -41,3 +41,16 @@ $routes->get('tasks/new', 'Tasks::new', ['filter' => 'auth']);
 $routes->post('tasks', 'Tasks::create', ['filter' => 'auth']);
 $routes->get('tasks/edit/(:num)', 'Tasks::edit/$1', ['filter' => 'auth']);
 $routes->get('tasks/delete/(:num)', 'Tasks::delete/$1', ['filter' => 'auth']);
+
+// Midterm POS: Product management (public view, protected actions)
+$routes->get('products', 'Products::index');
+$routes->get('products/new', 'Products::new', ['filter' => 'auth']);
+$routes->post('products', 'Products::create', ['filter' => 'auth']);
+$routes->get('products/edit/(:num)', 'Products::edit/$1', ['filter' => 'auth']);
+$routes->post('products/update/(:num)', 'Products::update/$1', ['filter' => 'auth']);
+$routes->get('products/delete/(:num)', 'Products::delete/$1', ['filter' => 'auth']);
+
+// Midterm POS: Sales (record sale + history, protected)
+$routes->get('record-sale', 'Sales::recordSale', ['filter' => 'auth']);
+$routes->post('record-sale/process', 'Sales::processSale', ['filter' => 'auth']);
+$routes->get('sales', 'Sales::index', ['filter' => 'auth']);

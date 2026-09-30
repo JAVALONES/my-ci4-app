@@ -19,30 +19,30 @@
 
     <nav>
         <a href="<?= base_url('/') ?>">Home</a>
-        <a href="<?= base_url('tasks') ?>">Tasks</a>
+        <a href="<?= base_url('about') ?>">About</a>
         <a href="<?= base_url('customers') ?>">Customers</a>
         <a href="<?= base_url('users') ?>">Users</a>
-        <a href="<?= base_url('customers/new') ?>">Add Customer</a>
-        | <span style="font-weight:bold; color:#cc6600;">| TFA ↔ TSA ↔ Midterm</span>
     </nav>
 
     <table>
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Username</th>
+                <th>Avatar</th>
                 <th>Full Name</th>
-                <th>Email</th>
-                <th>Phone</th>
+                <th>Created At</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($customers as $customer): ?>
+            <?php foreach ($users as $user): ?>
                 <tr>
-                    <td><?= esc($customer['id']) ?></td>
-                    <td><?= esc($customer['full_name']) ?></td>
-                    <td><?= esc($customer['email']) ?></td>
-                    <td><?= esc($customer['phone']) ?></td>
-                    <td><a href="<?= base_url('customers/edit/'.$customer['id']) ?>">Edit</a></td>
+                    <td><?= esc($user['id']) ?></td>
+                    <td><?= esc($user['username']) ?></td>
+                    <td><img src="<?= $user['avatar'] ? base_url('uploads/'.$user['avatar']) : base_url('uploads/placeholder.png') ?>" width="40" height="40" style="object-fit:cover;border-radius:4px;"></td>
+                    <td><?= esc($user['full_name']) ?></td>
+                    <td><?= esc($user['created_at']) ?></td>
+                    <td><a href="<?= base_url('users/edit/'.$user['id']) ?>">Edit</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

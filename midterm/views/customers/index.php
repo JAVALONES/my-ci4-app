@@ -23,7 +23,6 @@
         <a href="<?= base_url('customers') ?>">Customers</a>
         <a href="<?= base_url('users') ?>">Users</a>
         <a href="<?= base_url('customers/new') ?>">Add Customer</a>
-        | <span style="font-weight:bold; color:#cc6600;">| TFA ↔ TSA ↔ Midterm</span>
     </nav>
 
     <table>

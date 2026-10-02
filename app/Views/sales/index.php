@@ -59,8 +59,8 @@
                         <td><?= esc($s['customer_name']) ?></td>
                         <td><?= esc($s['sold_by']) ?></td>
                         <td><?= esc($s['quantity']) ?></td>
-                        <td>$<?= number_format($s['unit_price'], 2) ?></td>
-                        <td>$<?= number_format($s['total_price'], 2) ?></td>
+                        <td>₱<?= number_format($s['unit_price'], 2) ?></td>
+                        <td>₱<?= number_format($s['total_price'], 2) ?></td>
                         <td><?= esc($s['created_at']) ?></td>
                     </tr>
                 <?php endforeach; ?>

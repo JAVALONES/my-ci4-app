@@ -27,7 +27,7 @@
             <div class="error"><?= esc($validation->getError('name')) ?></div>
         <?php endif; ?>
 
-        <label for="price">Price ($)</label>
+        <label for="price">Price (₱)</label>
         <input type="number" step="0.01" id="price" name="price" value="<?= esc(service('request')->getOldInput('price', $product['price'] ?? '')) ?>" required>
         <?php if (isset($validation)): ?>
             <div class="error"><?= esc($validation->getError('price')) ?></div>

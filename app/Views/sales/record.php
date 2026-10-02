@@ -93,9 +93,9 @@
 
             if (price > 0 && selected.value) {
                 priceInfo.style.display = 'block';
-                priceInfo.textContent = `Unit Price: $${price.toFixed(2)} | Available Stock: ${stock}`;
+                priceInfo.textContent = `Unit Price: ₱${price.toFixed(2)} | Available Stock: ${stock}`;
                 if (qty > 0) {
-                    totalInfo.innerHTML = `<strong>Total: $${(price * qty).toFixed(2)}</strong>`;
+                    totalInfo.innerHTML = `<strong>Total: ₱${(price * qty).toFixed(2)}</strong>`;
                     if (qty > stock) {
                         totalInfo.innerHTML += ' <span style="color:red;">(Insufficient stock!)</span>';
                     }

@@ -50,13 +50,19 @@
         <div class="product-grid">
             <?php foreach ($products as $p): ?>
                 <div class="product-card">
-                    <?php if ($p['image'] && file_exists(FCPATH . 'uploads/' . $p['image'])): ?>
-                        <img src="<?= base_url('uploads/' . $p['image']) ?>" alt="<?= esc($p['name']) ?>" class="product-img">
+                    <?php if ($p['image']): ?>
+                        <?php if (strpos($p['image'], 'http') === 0): ?>
+                            <img src="<?= esc($p['image']) ?>" alt="<?= esc($p['name']) ?>" class="product-img">
+                        <?php elseif (file_exists(FCPATH . 'uploads/' . $p['image'])): ?>
+                            <img src="<?= base_url('uploads/' . $p['image']) ?>" alt="<?= esc($p['name']) ?>" class="product-img">
+                        <?php else: ?>
+                            <div class="no-img">No Image</div>
+                        <?php endif; ?>
                     <?php else: ?>
                         <div class="no-img">No Image</div>
                     <?php endif; ?>
                     <h3><?= esc($p['name']) ?></h3>
-                    <p class="price">$<?= number_format($p['price'], 2) ?></p>
+                    <p class="price">₱<?= number_format($p['price'], 2) ?></p>
                     <p class="stock <?= $p['stock_quantity'] <= 0 ? 'stock-out' : ($p['stock_quantity'] <= 5 ? 'stock-low' : '') ?>">
                         Stock: <?= esc($p['stock_quantity']) ?>
                     </p>

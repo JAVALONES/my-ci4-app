@@ -2,6 +2,12 @@
 
 In compliance with the subject "Web System Technologies"
 
+This repository also contains the POS Midterm Project of the owner's group that includes
+- Jimenez, Arwind Craig R.
+- Parido Vance Uriele C.
+- Valones, Joseph Victor A.
+- Yu, Hayden Bert Y.
+
 ## Required Pages
 
 | Route | Controller | Method | Description |

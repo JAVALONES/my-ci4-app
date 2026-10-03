@@ -23,12 +23,12 @@ This repository also contains the POS Midterm Project of the owner's group that 
 my-ci4-app/
 ├── app/
 │   ├── Config/
-│   │   ├── App.php       (indexPage = '', baseURL configured)
-│   │   └── Routes.php    (4 routes registered)
+│   │   ├── App.php       
+│   │   └── Routes.php    
 │   ├── Controllers/
-│   │   ├── Pages.php     (Home + About)
-│   │   ├── Customers.php (Customer list — static PHP array)
-│   │   └── Users.php     (User list — static PHP array)
+│   │   ├── Pages.php     
+│   │   ├── Customers.php 
+│   │   └── Users.php     
 │   ├── Models/
 │   │   └── ProductModel.php
 │   ├── Views/
@@ -42,8 +42,8 @@ my-ci4-app/
 │   └── ...
 ├── public/
 ├── system/
-├── .env           (configured with development mode + base URL)
-├── .htaccess      (for clean URLs)
+├── .env           
+├── .htaccess      
 ├── composer.json
 ├── spark
 └── README.md
